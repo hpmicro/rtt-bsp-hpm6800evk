@@ -11,8 +11,8 @@
 
 | 功能       | 引脚 | 位置   |
 | ---------- | ---- | ------ |
-| UART3.TXD | PE14 | P2[10] |
-| UART3.RXD | PE15 | P2[8] |
+| UART3.RXD | PE14 | P2[10] |
+| UART3.TXD | PE15 | P2[8] |
 
 ### RT-Thread命令
 

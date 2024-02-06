@@ -3,8 +3,8 @@ board:
   buy_url_global: http://www.hpmicro.com
   debug_interface: JTAG
   debugger: FT2232
-  description_en: The HPM6800EVK is a dual-core flashless MCU running 600Mhz. It has a 1MB continuous on-chip ram. Also, it provides various memory interfaces, including SDRAM, Quad SPI NOR Flash, SD/eMMC. It integrates rich audio and video interfaces, including LCD, pixel DMA, camera， and I2S audio interfaces.
-  description_zh: HPM6800EVK 是一款主频达600MHz的双核微控制器。该芯片拥有最大1M字节的连续片上RAM，并集成了丰富的存储接口，如SDRAM，Quad SPI NOR flash， SD/eMMC卡。同时它也提供多种音视频接口包括LCD显示，像素DMA，摄像头以及I2S音频接口。
+  description_en: The HPM6800EVK is a single-core flashless MCU running 600Mhz. It has a 1MB continuous on-chip ram. Also, it provides various memory interfaces, including DDR2/DDR3/DDR3L, Quad SPI NOR Flash, SD/eMMC. It integrates rich audio and video interfaces, including LCD, pixel DMA, camera， and I2S audio interfaces.
+  description_zh: HPM6800EVK 是一款主频达600MHz的单核微控制器。该芯片拥有最大1M字节的连续片上RAM，并集成了丰富的存储接口，如DDR2/DDR3/DDR3L，Quad SPI NOR flash， SD/eMMC卡。同时它也提供多种音视频接口包括LCD显示，像素DMA，摄像头以及I2S音频接口。
   emulator_machine: ''
   large_image: documents/images/board_6800evk_large.png
   name: HPM6800EVK
@@ -39,8 +39,8 @@ features:
 - 'MCU: HPM6880 MCU (600MHz, 1MB SRAM)'
 - 'On-Board 256MB SDRAM, 16MB Quad SPI NOR Flash, 8GB eMMC'
 - 'Buttons: 3, RESET, WBUTN, PBUTN'
-- 'Debug Interface: 10-PIN JTAG interface'
-- 'On-board one Ethernets: 1000M'
+- 'Debug Interface: 20-PIN JTAG interface'
+- 'On-board Ethernet: 1000Mbps PHY x1'
 - 'USB: USB type C (USB 2.0 OTG) connector x1'
 - 'Audio: Line in, Mic, Speaker, DAO'
 - 'Others: TF slot, RGB LED, CANFD'
@@ -50,23 +50,36 @@ features_zh:
 - 'LCD-RGB接口, MIPI-DSI, MIPI-CSI, 摄像头(DVP)接口'
 - '板载 256MB SDRAM, 16MB Quad SPI NOR Flash, 8GB eMMC'
 - '调试接口: 20-PIN JTAG接口'
-- '板载一路以太网: 1000 Mbits PHY'
+- '板载以太网: 1000Mbps PHY x1'
 - 'USB: USB type C (USB 2.0 OTG) connector x1'
 - '音频: Line in, Mic, Speaker, DAO'
 - '其他: TF卡槽, RGB LED, CANFD'
 
 pkg_type: Board_Support_Packages
 pkg_vendor: HPMicro
-pkg_version: 1.4.0
+pkg_version: 1.4.1
 
 template_projects:
-- project_name: 
+- project_name: blink_led
   project_description: create this project if user choose rt-thread project
   project_type: rt-thread|@full|@5.0.2
   builtin_files:
-  - source_path_offset: projects/
+  - source_path_offset: projects/blink_led
     target_path_offset: ''
     files_and_folders:
+    - .config
+    - .config.old
+    - .cproject
+    - .project
+    - .settings
+    - applications
+    - Kconfig
+    - README.md
+    - rtconfig.h
+    - rtconfig.py
+    - rtconfig_preinc.h
+    - SConscript
+    - SConstruct
   - source_path_offset: 'common'
     target_path_offset: ''
     files_and_folders:

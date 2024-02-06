@@ -290,22 +290,34 @@ menu "On-chip Peripheral Drivers"
                 default n
         endif
 
-    menuconfig BSP_USING_CAN
-        bool "Enable CAN"
+    menuconfig BSP_USING_MCAN
+        bool "Enable MCAN"
         default n
-        select RT_USING_CAN if BSP_USING_CAN
-        if BSP_USING_CAN
-            config BSP_USING_CAN0
-                bool "Enable CAN0"
+        select RT_USING_CAN if BSP_USING_MCAN
+        if BSP_USING_MCAN
+            config BSP_USING_MCAN0
+                bool "Enable MCAN0"
                 default n
-            config BSP_USING_CAN1
-                bool "Enable CAN1"
+            config BSP_USING_MCAN1
+                bool "Enable MCAN1"
                 default n
-            config BSP_USING_CAN2
-                bool "Enable CAN2"
+            config BSP_USING_MCAN2
+                bool "Enable MCAN2"
                 default n
-            config BSP_USING_CAN3
-                bool "Enable CAN3"
+            config BSP_USING_MCAN3
+                bool "Enable MCAN3"
+                default n
+            config BSP_USING_MCAN4
+                bool "Enable MCAN4"
+                default n
+            config BSP_USING_MCAN5
+                bool "Enable MCAN5"
+                default n
+            config BSP_USING_MCAN6
+                bool "Enable MCAN6"
+                default n
+            config BSP_USING_MCAN7
+                bool "Enable MCAN7"
                 default n
         endif
 
