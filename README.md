@@ -19,4 +19,3 @@ RT-Thread Studio BSP for HPM6800EVK Board
 - usb_device_generic_hid
 - usb_host_msc_udisk
 - web_camera_demo
-- webnet_demo

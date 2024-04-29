@@ -19,11 +19,14 @@ _start:
     la tp, __thread_pointer
     .option pop
 
-    /* Enable LMM1 clock */
-    la t0, 0xF4000800
-    lw t1, 0(t0)
-    ori t1, t1, 0x80
-    sw t1, 0(t0)
+#ifdef __riscv_flen
+    /* Enable FPU */
+    li t0, CSR_MSTATUS_FS_MASK
+    csrrs t0, mstatus, t0
+
+    /* Initialize FCSR */
+    fscsr zero
+#endif
 
 #ifdef INIT_EXT_RAM_FOR_DATA
     la t0, _stack_in_dlm
@@ -49,12 +52,20 @@ _start:
     /* Initialize FCSR */
     fscsr zero
 #endif
-    /* Disable Vector mode */
-    csrci CSR_MMISC_CTL, 2
-    /* Initialize trap_entry base */
+
+#ifdef HPM_USING_VECTOR_PREEMPTED_MODE
+    /* Initial machine trap-vector Base */
+    la t0, __vector_table
+    csrw mtvec, t0
+    /* Enable vectored external PLIC interrupt */
+    csrsi CSR_MMISC_CTL, 2
+#else
+    /* Initial machine trap-vector Base */
     la t0, SW_handler
     csrw mtvec, t0
-
+    /* Disable vectored external PLIC interrupt */
+    csrci CSR_MMISC_CTL, 2
+#endif
 
     /* System reset handler */
     call reset_handler
