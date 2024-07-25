@@ -397,7 +397,6 @@
 #define BSP_USING_ETH
 #define BSP_USING_ETH0
 #define BSP_USING_GPTMR
-#define BSP_USING_FEMC
 #define INIT_EXT_RAM_FOR_DATA
 /* end of On-chip Peripheral Drivers */
 /* end of Hardware Drivers Config */

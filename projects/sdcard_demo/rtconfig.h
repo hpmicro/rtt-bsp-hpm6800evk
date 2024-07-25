@@ -18,11 +18,14 @@
 #define IDLE_THREAD_STACK_SIZE 1024
 #define RT_USING_TIMER_SOFT
 #define RT_TIMER_THREAD_PRIO 4
-#define RT_TIMER_THREAD_STACK_SIZE 512
+#define RT_TIMER_THREAD_STACK_SIZE 1024
 
 /* kservice optimization */
 
 /* end of kservice optimization */
+#define RT_USING_DEBUG
+#define RT_DEBUGING_COLOR
+#define RT_DEBUGING_CONTEXT
 
 /* Inter-Thread communication */
 
@@ -109,12 +112,12 @@
 #define RT_USING_PIN
 #define RT_USING_RTC
 #define RT_USING_SDIO
-#define RT_SDIO_STACK_SIZE 512
+#define RT_SDIO_STACK_SIZE 2048
 #define RT_SDIO_THREAD_PRIORITY 15
 #define RT_MMCSD_STACK_SIZE 2048
 #define RT_MMCSD_THREAD_PREORITY 22
 #define RT_MMCSD_MAX_PARTITION 16
-#define RT_USING_SPI
+#define RT_SDIO_DEBUG
 
 /* Using USB */
 
@@ -239,6 +242,21 @@
 
 /* peripheral libraries and drivers */
 
+/* HAL & SDK Drivers */
+
+/* STM32 HAL & SDK Drivers */
+
+/* end of STM32 HAL & SDK Drivers */
+
+/* Infineon HAL Packages */
+
+/* end of Infineon HAL Packages */
+
+/* Kendryte SDK */
+
+/* end of Kendryte SDK */
+/* end of HAL & SDK Drivers */
+
 /* sensors drivers */
 
 /* end of sensors drivers */
@@ -246,10 +264,6 @@
 /* touch drivers */
 
 /* end of touch drivers */
-
-/* Kendryte SDK */
-
-/* end of Kendryte SDK */
 /* end of peripheral libraries and drivers */
 
 /* AI packages */
@@ -335,14 +349,28 @@
 #define BSP_USING_UART3
 #define BSP_UART3_RX_BUFSIZE 1024
 #define BSP_UART3_TX_BUFSIZE 0
-#define BSP_USING_SPI
 #define BSP_USING_RTC
 #define BSP_USING_SDXC
+#define BSP_USING_SDXC0
+#define BSP_SDXC0_BUS_WIDTH_8BIT
+#define BSP_SDXC0_VOLTAGE_1V8
+#define BSP_SDXC0_VSEL_PIN "None"
+#define BSP_SDXC0_PWR_PIN "None"
 #define BSP_USING_SDXC1
 #define BSP_SDXC1_BUS_WIDTH_4BIT
-#define BSP_USING_FEMC
+#define BSP_SDXC1_VOLTAGE_DUAL
+#define BSP_SDXC1_VSEL_PIN "PD12"
+#define BSP_SDXC1_PWR_PIN "PD07"
 #define INIT_EXT_RAM_FOR_DATA
 /* end of On-chip Peripheral Drivers */
+
+/* Segger SystemView Config */
+
+/* end of Segger SystemView Config */
+
+/* Hpmicro Interrupt Config */
+
+/* end of Hpmicro Interrupt Config */
 /* end of Hardware Drivers Config */
 
 #endif

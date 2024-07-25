@@ -1238,8 +1238,13 @@ uint32_t board_sd_configure_clock(SDXC_Type *ptr, uint32_t freq, bool need_inver
         }
             /* Configure the clock to 166MHz for SDR104/HS200/HS400  */
         else if (freq <= 208000000UL) {
-            /* 166MHz */
-            clock_set_source_divider(sdxc_clk, clk_src_pll1_clk1, 4U);
+            if (sdxc_clk == clock_sdxc0) {
+                /* 133MHz */
+                clock_set_source_divider(sdxc_clk, clk_src_pll1_clk1, 5U);
+            } else {
+                /* 133MHz */
+                clock_set_source_divider(sdxc_clk, clk_src_pll1_clk1, 5U);
+            }
             sdxc_set_clock_divider(ptr, 1U);
         }
             /* For other unsupported clock ranges, configure the clock to 24MHz */

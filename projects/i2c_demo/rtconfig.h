@@ -257,7 +257,6 @@
 #define BSP_USING_RTC
 #define BSP_USING_I2C
 #define BSP_USING_I2C1
-#define BSP_USING_FEMC
 #define INIT_EXT_RAM_FOR_DATA
 
 #endif

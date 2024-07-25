@@ -2,6 +2,12 @@
 
 本例程演示基于RT-Thread SDIO 驱动框架的 SD/MMC 卡挂载
 
+**注意**
+- 该开发板板载eMMC和SD卡槽，同时支持eMMC和SD/MMC卡挂载
+- 默认挂载文件系统的卡受`BOARD_SD_NAME`控制，在本设备上，该值默认为`sd1`
+- 若测试板载eMMC设备，可将`BOARD_SD_NAME`改为`sd0`
+- 对于有些TF转eMMC设备，可能无法在高时钟频率下正常工作，此时需要禁用1.8V支持
+
 ## 操作步骤
 
 - 提前插好 SD 卡或者 eMMC转TF卡：
@@ -11,11 +17,11 @@
 ```console
  \ | /
 - RT -     Thread Operating System
- / | \     5.0.1 build May 15 2023 17:44:01
+ / | \     5.0.2 build May 15 2023 17:44:01
  2006 - 2022 Copyright by RT-Thread team
 msh />found part[0], begin: 32256, size: 28.907GB
 
-msh />sd0 mounted to /
+msh />sd1 mounted to /
 
 ```
 
@@ -46,6 +52,7 @@ tail             - print the last N - lines data of the given file
 date             - get date and time or set (local timezone) [year month day hour min sec]
 pin              - pin [option]
 reset            - reset the board
+mmcsd_perf       - test emmc/sd read write speed
 ```
 
 其中，如下命令可做文件系统相关的测试：

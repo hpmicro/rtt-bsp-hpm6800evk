@@ -193,13 +193,21 @@
 
 /* peripheral libraries and drivers */
 
+/* HAL & SDK Drivers */
+
+/* STM32 HAL & SDK Drivers */
+
+
+/* Infineon HAL Packages */
+
+
+/* Kendryte SDK */
+
+
 /* sensors drivers */
 
 
 /* touch drivers */
-
-
-/* Kendryte SDK */
 
 
 /* AI packages */
@@ -268,17 +276,25 @@
 #define BSP_UART3_TX_BUFSIZE 0
 #define BSP_USING_SPI
 #define BSP_USING_RTC
+#define BSP_USING_TOUCH
+#define BSP_USING_TOUCH_GT9xx
 #define BSP_USING_LCD
 #define BSP_USING_LVGL
 #define BSP_USING_PDMA
 #define BSP_USING_GPTMR
 #define BSP_USING_I2C
 #define BSP_USING_I2C0
-#define BSP_USING_FEMC
 #define INIT_EXT_RAM_FOR_DATA
 #define BSP_USING_PANEL
 #define BSP_USEING_PANEL_MIPI_MC10128007_31B
 #define BSP_USING_PIXELMUX
 #define BSP_USING_MIPI_DSI
+#define BSP_USING_LVB
+
+/* Segger SystemView Config */
+
+
+/* Hpmicro Interrupt Config */
+
 
 #endif

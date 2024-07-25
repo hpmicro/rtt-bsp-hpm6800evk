@@ -46,11 +46,5 @@ msh >hello hpmicro~~~
 hello hpmicro123456789
 ```
 
-## 注意
-
-- 该例程中的串口波特率使用rtthread默认115200
-- 对于RT_DEVICE_FLAG_RX_NON_BLOCKING，使用DMA接收，但只能定长接收，定长长度取决于BSP_UART13_RX_BUFSIZE，需要开启BSP_UART13_RX_USING_DMA
-- 对于RT_DEVICE_FLAG_RX_BLOCKING，使用硬件FIFO接收并使用超时机制，可以不定长接收，最大接收长度取决于BSP_UART13_RX_BUFSIZE，需要关闭BSP_UART13_RX_USING_DMA
-
 
 

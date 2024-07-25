@@ -17,6 +17,7 @@
 #include <rtthread.h>
 #include "hpm_dma_mgr.h"
 #include "hpm_rtt_os_tick.h"
+#include "hpm_l1c_drv.h"
 
 extern int rt_hw_uart_init(void);
 
@@ -94,3 +95,15 @@ void rt_hw_cpu_reset(void)
 }
 
 MSH_CMD_EXPORT_ALIAS(rt_hw_cpu_reset, reset, reset the board);
+
+#ifdef RT_USING_CACHE
+void rt_hw_cpu_dcache_ops(int ops, void *addr, int size)
+{
+    if (ops == RT_HW_CACHE_FLUSH) {
+        l1c_dc_flush((uint32_t)addr, size);
+    } else {
+        l1c_dc_invalidate((uint32_t)addr, size);
+    }
+}
+#endif
+

@@ -187,13 +187,16 @@
 #define PKG_CHERRYUSB_DEVICE_HPM
 #define PKG_CHERRYUSB_DEVICE_HID
 #define PKG_CHERRYUSB_DEVICE_TEMPLATE_NONE
-#define PKG_USING_CHERRYUSB_V010200
+#define PKG_USING_CHERRYUSB_V010301
 
 /* peripheral libraries and drivers */
 
 /* HAL & SDK Drivers */
 
 /* STM32 HAL & SDK Drivers */
+
+
+/* Infineon HAL Packages */
 
 
 /* Kendryte SDK */
@@ -271,12 +274,14 @@
 #define BSP_UART3_TX_BUFSIZE 0
 #define BSP_USING_SPI
 #define BSP_USING_RTC
-#define BSP_USING_FEMC
 #define INIT_EXT_RAM_FOR_DATA
 #define BSP_USING_USB
 #define BSP_USING_USB_DEVICE
 
 /* Segger SystemView Config */
+
+
+/* Hpmicro Interrupt Config */
 
 
 #endif

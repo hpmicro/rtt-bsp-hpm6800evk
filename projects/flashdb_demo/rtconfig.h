@@ -203,7 +203,5 @@
 #define BSP_USING_SPI
 #define BSP_USING_SPI1
 #define BSP_USING_RTC
-#define BSP_USING_FEMC
 #define INIT_EXT_RAM_FOR_DATA
-
 #endif
