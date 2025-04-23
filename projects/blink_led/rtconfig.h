@@ -250,7 +250,6 @@
 #define BSP_UART0_TX_BUFSIZE 0
 #define BSP_USING_SPI
 #define BSP_USING_SPI1
-#define BSP_USING_RTC
 #define INIT_EXT_RAM_FOR_DATA
 /* end of On-chip Peripheral Drivers */
 /* end of Hardware Drivers Config */

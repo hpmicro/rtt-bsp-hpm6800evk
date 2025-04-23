@@ -191,7 +191,6 @@
 #define BSP_UART0_TX_BUFSIZE 0
 #define BSP_USING_SPI
 #define BSP_USING_SPI1
-#define BSP_USING_RTC
 #define BSP_USING_MCAN
 #define BSP_USING_MCAN0
 #define BSP_USING_MCAN3
