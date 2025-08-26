@@ -25,7 +25,6 @@
 /* end of kservice optimization */
 #define RT_USING_DEBUG
 #define RT_DEBUGING_COLOR
-#define RT_DEBUGING_CONTEXT
 
 /* Inter-Thread communication */
 
@@ -41,7 +40,6 @@
 #define RT_USING_MEMPOOL
 #define RT_USING_SMALL_MEM
 #define RT_USING_SMALL_MEM_AS_HEAP
-#define RT_USING_MEMTRACE
 #define RT_USING_HEAP
 /* end of Memory Management */
 
@@ -100,6 +98,7 @@
 #define RT_USING_SERIAL_V2
 #define RT_SERIAL_USING_DMA
 #define RT_USING_PIN
+#define RT_USING_RTC
 #define RT_USING_SDIO
 #define RT_SDIO_STACK_SIZE 1024
 #define RT_SDIO_THREAD_PRIORITY 15
@@ -249,8 +248,9 @@
 #define CYBSP_OOB_INTR_PRIORITY 2
 #define CY_WIFI_USING_THREAD_INIT
 #define CY_WIFI_INIT_THREAD_STACK_SIZE 2048
-#define PKG_USING_WIFI_HOST_DRIVER_V100
-#define PKG_WIFI_HOST_DRIVER_VER_NUM 0x10000
+#define CY_WIFI_LOG_LEVEL_INFO
+#define PKG_USING_WIFI_HOST_DRIVER_V121
+#define PKG_WIFI_HOST_DRIVER_VER_NUM 0x10201
 
 /* Wi-Fi */
 
@@ -284,8 +284,8 @@
 #define NETUTILS_NTP_HOSTNAME "cn.ntp.org.cn"
 #define NETUTILS_NTP_HOSTNAME2 "ntp.rt-thread.org"
 #define NETUTILS_NTP_HOSTNAME3 "edu.ntp.org.cn"
-#define PKG_USING_NETUTILS_LATEST_VERSION
-#define PKG_NETUTILS_VER_NUM 0x99999
+#define PKG_USING_NETUTILS_V133
+#define PKG_NETUTILS_VER_NUM 0x10303
 
 /* IoT Cloud */
 
@@ -364,6 +364,22 @@
 /* AT32 HAL & SDK Drivers */
 
 /* end of AT32 HAL & SDK Drivers */
+
+/* HC32 DDL Drivers */
+
+/* end of HC32 DDL Drivers */
+
+/* NXP HAL & SDK Drivers */
+
+/* end of NXP HAL & SDK Drivers */
+
+/* NUVOTON Drivers */
+
+/* end of NUVOTON Drivers */
+
+/* GD32 Drivers */
+
+/* end of GD32 Drivers */
 /* end of HAL & SDK Drivers */
 
 /* sensors drivers */
